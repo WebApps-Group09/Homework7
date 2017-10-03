@@ -16,7 +16,7 @@
     }
     $_SESSION["id"] = pg_fetch_result($result, 0, "id");
     $_SESSION["username"] = $_POST["username"];
-    //header("Location: home.php");
+    header("Location: home.php");
   }
   include "page-views.php";
 ?>
@@ -53,7 +53,7 @@
   <?php
     if (isset($_SESSION["logout"])) {
       unset($_SESSION["logout"]);
-      echo "<p style="color:#c0c0c0">You have been logged out.</p>";
+      echo '<p style="color:#c0c0c0">You have been logged out.</p>';
     }
   ?>
     <h1>Login</h1>
