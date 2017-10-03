@@ -12,6 +12,6 @@
   $state = $profile_info["state"];
   $zip = $profile_info["zip"];
   $year = $profile_info["year"];
-  $sports = explode(" ",$profile_info["sports"]);
+  $sports = explode(":",$profile_info["sports"]);
   $quote = $profile_info["quote"];
 ?>
