@@ -41,13 +41,13 @@
     </div>
   </nav>
   <div class="container">
-    <h1>Login</h1>
   <?php
     if (isset($_SESSION["logout"])) {
       unset($_SESSION["logout"]);
-      echo '<p>You have been logged out.</p>';
+      echo '<p style="color:#c0c0c0">You have been logged out.</p>';
     }
   ?>
+    <h1>Login</h1>
     <form method="post" action="index.php">
       <div class="row form-group">
         <label class="col-sm-2 control-label" for="username">Username</label>
