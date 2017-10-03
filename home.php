@@ -41,7 +41,7 @@
     </div>
   </nav>
 <?php
-  //TODO: retrieve info from db
+  include "get-profile.php";
 ?>
   <div class="container">
   <?php
@@ -61,10 +61,6 @@
     echo "<h3>Favorite Quote</h3>";
       echo "<p>".$quote."</p>";
   ?>
-  <br>
-  <form method="post" action="logout.php">
-    <button type="submit" class="btn btn-secondary">Logout</button>
-  </form>
   </div>
   <!-- JS for the navbar collapse -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

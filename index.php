@@ -3,14 +3,11 @@
   if (isset($_SESSION["id"])) {
     header("Location: home.php");
   } else if (!empty($_POST["username"])) {
-    echo "USERNAME POSTED";
     $db_connection = pg_connect("host=localhost dbname=homework7 user=homework7 password=homework7");
     $id_query = "SELECT id FROM users WHERE username='".$_POST["username"]."'";
-    echo $id_query;
     $result = pg_query($db_connection, $id_query);
     if (pg_num_rows($result) == 0) {
       $query = "INSERT INTO users (username, registration) VALUES ('".$_POST["username"]."', CURRENT_TIMESTAMP)";
-      echo $query;
       pg_query($db_connection, $query);
       $result = pg_query($db_connection, $id_query);
     }
