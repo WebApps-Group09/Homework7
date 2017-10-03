@@ -4,6 +4,7 @@
     header("Location: index.php");
   }
   include "page-views.php";
+  include "get-profile.php";
 ?>
 <html lang="en">
 <head>
@@ -42,60 +43,59 @@
   </nav>
   <div class="container">
     <h1>Edit Profile</h1>
-    <form method="post" action="home.php">
+    <form method="post" action="set-profile.php">
       <div class="row form-group">
-        <label class="col-sm-2 control-label" for="inputName">Full Name</label>
+        <label class="col-sm-2 control-label">Full Name</label>
         <div class="col-sm-5">
-          <input class="form-control" name="fname" id="inputFirstName" placeholder="First" type="text" value="<?php ?>" required/>
+          <input class="form-control" name="fname" id="inputFirstName" placeholder="First" type="text" value="<?php echo $fname; ?>" required/>
         </div>
         <div class="col-sm-5">
-          <input class="form-control" name="lname" id="inputLastName" placeholder="Last" type="text" value="<?php ?>" required/>
+          <input class="form-control" name="lname" id="inputLastName" placeholder="Last" type="text" value="<?php echo $lname; ?>" required/>
         </div>
       </div>
       <div class="row form-group">
-        <label class="col-sm-2 control-label" for="inputAddr">Address/Dorm</label>
-        <div class="col-sm-6">
-          <input class="form-control" name="address" id="inputAddr" placeholder="Address" type="text" value="<?php ?>" required/>
-        </div>
-        <div class="col-sm-4">
-          <input class="form-control" name="dorm" id="inputDorm" placeholder="Dorm" type="text" value="<?php ?>" required/>
+        <label class="col-sm-2 control-label">Address</label>
+        <div class="col-sm-12">
+          <input class="form-control" name="address" id="inputAddr" placeholder="Address" type="text" value="<?php echo $address; ?>" required/>
         </div>
       </div>
       <div class="row form-group">
-        <label class="col-sm-2 control-label" for="inputLoc">City/State/Zip</label>
         <div class="col-sm-4">
-          <input class="form-control" name="city" id="inputCity" placeholder="City" type="text" value="<?php ?>" required/>
+          <input class="form-control" name="city" id="inputCity" placeholder="City" type="text" value="<?php echo $city; ?>" required/>
         </div>
         <div class="col-sm-3">
-          <input class="form-control" name="state" id="inputState" placeholder="State" type="text" value="<?php ?>" required/>
+          <input class="form-control" name="state" id="inputState" placeholder="State" type="text" value="<?php echo $state; ?>" required/>
         </div>
         <div class="col-sm-3">
-          <input class="form-control" name="zip" id="inputZip" placeholder="Zip" type="text" value="<?php ?>" required/>
+          <input class="form-control" name="zip" id="inputZip" placeholder="Zip" type="text" value="<?php echo $zip; ?>" required/>
         </div>
       </div>
       <div class="row form-group">
-        <label class="col-sm-2 control-label" for="inputYear">Current Year</label>
-        <div class="col-sm-10">
-          <input class="form-control" name="year" id="inputYear" placeholder="ex: Senior" type="text" value="<?php ?>">
+        <label class="col-sm-2 control-label">Class</label>
+        <div class="col-sm-5">
+          <input class="form-control" name="dorm" id="inputDorm" placeholder="Dorm" type="text" value="<?php echo $dorm; ?>" required/>
+        </div>
+        <div class="col-sm-5">
+          <input class="form-control" name="year" id="inputYear" placeholder="ex: Senior" type="text" value="<?php echo $year; ?>">
         </div>
       </div>
       <div class="row form-group">
-        <label class="col-sm-2 control-label" for="inputSports">Favorite Sports</label>
+        <label class="col-sm-2 control-label">Favorite Sports</label>
         <div class="col-sm-10" id="inputSports">
-          <input type="checkbox" name="sports[]" value="iceskating"> Ice Skating<br>
-          <input type="checkbox" name="sports[]" value="curling"> Curling<br>
-          <input type="checkbox" name="sports[]" value="ballet"> Ballet<br>
-          <input type="checkbox" name="sports[]" value="tennis"> Tennis<br>
-          <input type="checkbox" name="sports[]" value="golf"> Golf<br>
-          <input type="checkbox" name="sports[]" value="basketball"> Basketball<br>
-          <input type="checkbox" name="sports[]" value="gymnastics"> Gymnastics<br>
+          <input type="checkbox" name="sports[]" value="iceskating" <?php if (strpos($sports, 'Ice Skating') !== false){echo 'checked';} ?> > Ice Skating<br>
+          <input type="checkbox" name="sports[]" value="curling" <?php if (strpos($sports, 'Curling') !== false){echo 'checked';} ?> > Curling<br>
+          <input type="checkbox" name="sports[]" value="ballet" <?php if (strpos($sports, 'Ballet') !== false){echo 'checked';} ?> > Ballet<br>
+          <input type="checkbox" name="sports[]" value="tennis" <?php if (strpos($sports, 'Tennis') !== false){echo 'checked';} ?> > Tennis<br>
+          <input type="checkbox" name="sports[]" value="golf" <?php if (strpos($sports, 'Golf') !== false){echo 'checked';} ?> > Golf<br>
+          <input type="checkbox" name="sports[]" value="basketball" <?php if (strpos($sports, 'Basketball') !== false){echo 'checked';} ?> > Basketball<br>
+          <input type="checkbox" name="sports[]" value="gymnastics" <?php if (strpos($sports, 'Gymnastics') !== false){echo 'checked';} ?> > Gymnastics<br>
           <br>
         </div>
       </div>
       <div class="row form-group">
-        <label class="col-sm-2 control-label" for="inputQuote">Favorite Quote</label>
+        <label class="col-sm-2 control-label">Favorite Quote</label>
         <div class="col-sm-10">
-          <input class="form-control" name="quote" id="inputQuote" placeholder="ex: Don't cry because it's over, smile because it happened." type="text" value="<?php if(isset($_COOKIE["quote"]) && !empty($_COOKIE["quote"])){echo $_COOKIE["quote"];} ?>">
+          <input class="form-control" name="quote" id="inputQuote" placeholder="ex: Don't cry because it's over, smile because it happened." type="text" value="<?php echo $quote; ?>">
         </div>
       </div>
       <div class="row form-group">

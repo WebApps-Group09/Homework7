@@ -4,6 +4,7 @@
     header("Location: index.php");
   }
   include "page-views.php";
+  include "get-profile.php";
 ?>
 <html lang="en">
 <head>
@@ -40,22 +41,20 @@
       </div>
     </div>
   </nav>
-<?php
-  include "get-profile.php";
-?>
   <div class="container">
   <?php
     echo "<h1>Profile</h1>";
     echo "<h3>Full Name</h3>";
       echo "<p>".$fname." ".$lname."</p>";
-    echo "<h3>Address/Dorm</h3>";
-      echo "<p>".$address." ".$dorm."</p>";
-    echo "<h3>City/State/Zip</h3>";
-      echo "<p>".$city." ".$state." ".$zip."</p>";
+    echo "<h3>Address</h3>";
+      echo "<p>".$address."</p>";
+      echo "<p>".$city.", ".$state." ".$zip."</p>";
+    echo "<h3>Dorm</h3>";
+      echo "<p>".$dorm."</p>";
     echo "<h3>Current Year</h3>";
       echo "<p>".$year."</p>";
     echo "<h3>Favorite Sports</h3>";
-      foreach ($sports as $sport) {
+      foreach (explode(":", $sports) as $sport) {
         echo " ".$sport;
       }
     echo "<h3>Favorite Quote</h3>";
