@@ -4,8 +4,8 @@
   $result = pg_query($db_connection, $id_query);
   $profile_info = pg_fetch_all($result)[0];
 
-  $fname = $profile_info["first_name"];
-  $lname = $profile_info["last_name"];
+  $first_name = $profile_info["first_name"];
+  $last_name = $profile_info["last_name"];
   $address = $profile_info["address"];
   $dorm = $profile_info["dorm"];
   $city = $profile_info["city"];
