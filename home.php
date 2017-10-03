@@ -61,12 +61,10 @@
       echo '<p>'.$quote.'</p>';
   ?>
   <br>
-  <p><a href="profile-edit.php">Edit Profile</a></p>
-  <p><a href="activity.php">View Activity</a></p>
-  <p><a href="info.php">View Info</a></p>
   <form method="post" action="logout.php">
     <button type="submit" class="btn btn-secondary">Logout</button>
   </form>
   </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
