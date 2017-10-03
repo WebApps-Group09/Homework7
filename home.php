@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if (!isset($_SESSION["id"])) {
+  if(!isset($_SESSION["id"])) {
     header("Location: index.php");
   }
   include "page-views.php";
@@ -54,7 +54,7 @@
     echo "<h3>Current Year</h3>";
       echo "<p>".$year."</p>";
     echo "<h3>Favorite Sports</h3>";
-      foreach (explode(":", $sports) as $sport) {
+      foreach(explode(":", $sports) as $sport) {
         echo $sport."<br>";
       }
     echo "<h3>Favorite Quote</h3>";

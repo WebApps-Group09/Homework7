@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if (!isset($_SESSION["id"])) {
+  if(!isset($_SESSION["id"])) {
     header("Location: index.php");
   }
   $_SESSION["page"] = "info";
@@ -68,7 +68,7 @@
 
     echo "<h3>IP address</h3>";
     $clientip = "";
-      if (getenv("HTTP_CLIENT_IP"))
+      if(getenv("HTTP_CLIENT_IP"))
         $clientip = getenv("HTTP_CLIENT_IP");
       else if(getenv("HTTP_X_FORWARDED_FOR"))
         $clientip = getenv("HTTP_X_FORWARDED_FOR");
@@ -85,7 +85,7 @@
       print_r($clientip);
 
     echo "<h3>HTTPS Usage</h3>";
-    if ($_SERVER["HTTPS"])
+    if($_SERVER["HTTPS"])
       print_r("You are using https");
     else
       print_r("You are not using https");
