@@ -27,6 +27,7 @@ CREATE TABLE activity (
   time_stamp timestamp
 );
 ALTER TABLE activity OWNER to homework7;
+ALTER TABLE activity ADD COLUMN page text;
 
 INSERT INTO users (username, registration) VALUES ("ann", CURRENT_TIMESTAMP);
 UPDATE users SET first_name = "Ann" WHERE username="ann";

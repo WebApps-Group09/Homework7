@@ -3,6 +3,7 @@
   if (isset($_SESSION["id"])) {
     header('Location: home.php');
   } else if (!empty($_POST["username"])) {
+    echo 'USERNAME POSTED';
     $db_connection = pg_connect('host=localhost dbname=homework7 user=homework7 password=homework7');
     $id_query = 'SELECT id FROM users WHERE username="'.$_POST["username"].'"';
     $result = pg_query($db_connection, $id_query);
@@ -13,7 +14,7 @@
     }
     $_SESSION["id"] = pg_fetch_result($result, 0, "id");
     $_SESSION["username"] = $_POST["username"];
-    header('Location: home.php');
+    //header('Location: home.php');
   }
   include 'page-views.php';
 ?>
