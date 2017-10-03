@@ -45,7 +45,7 @@
   <?php
     echo "<h1>Profile</h1>";
     echo "<h3>Full Name</h3>";
-      echo "<p>".$fname." ".$lname."</p>";
+      echo "<p>".$first_name." ".$last_name."</p>";
     echo "<h3>Address</h3>";
       echo "<p>".$address."</p>";
       echo "<p>".$city.", ".$state." ".$zip."</p>";

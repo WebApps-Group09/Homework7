@@ -47,10 +47,10 @@
       <div class="row form-group">
         <label class="col-sm-2 control-label">Full Name</label>
         <div class="col-sm-5">
-          <input class="form-control" name="fname" id="inputFirstName" placeholder="First" type="text" value="<?php echo $fname; ?>" required/>
+          <input class="form-control" name="fname" id="inputFirstName" placeholder="First" type="text" value="<?php echo $first_name; ?>" required/>
         </div>
         <div class="col-sm-5">
-          <input class="form-control" name="lname" id="inputLastName" placeholder="Last" type="text" value="<?php echo $lname; ?>" required/>
+          <input class="form-control" name="lname" id="inputLastName" placeholder="Last" type="text" value="<?php echo $last_name; ?>" required/>
         </div>
       </div>
       <div class="row form-group">
@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="row form-group">
-        <label class="col-sm-2 control-label">Class</label>
+        <label class="col-sm-2 control-label">Dorm/Year</label>
         <div class="col-sm-5">
           <input class="form-control" name="dorm" id="inputDorm" placeholder="Dorm" type="text" value="<?php echo $dorm; ?>" required/>
         </div>
@@ -83,13 +83,13 @@
       <div class="row form-group">
         <label class="col-sm-2 control-label">Favorite Sports</label>
         <div class="col-sm-10" id="inputSports">
-          <input type="checkbox" name="sports[]" value="iceskating" <?php if (strpos($sports, 'Ice Skating') !== false){echo 'checked';} ?> > Ice Skating<br>
-          <input type="checkbox" name="sports[]" value="curling" <?php if (strpos($sports, 'Curling') !== false){echo 'checked';} ?> > Curling<br>
-          <input type="checkbox" name="sports[]" value="ballet" <?php if (strpos($sports, 'Ballet') !== false){echo 'checked';} ?> > Ballet<br>
-          <input type="checkbox" name="sports[]" value="tennis" <?php if (strpos($sports, 'Tennis') !== false){echo 'checked';} ?> > Tennis<br>
-          <input type="checkbox" name="sports[]" value="golf" <?php if (strpos($sports, 'Golf') !== false){echo 'checked';} ?> > Golf<br>
-          <input type="checkbox" name="sports[]" value="basketball" <?php if (strpos($sports, 'Basketball') !== false){echo 'checked';} ?> > Basketball<br>
-          <input type="checkbox" name="sports[]" value="gymnastics" <?php if (strpos($sports, 'Gymnastics') !== false){echo 'checked';} ?> > Gymnastics<br>
+          <input type="checkbox" name="sports[]" value="iceskating" <?php if (strpos($sports, 'Ice Skating') !== false){ echo 'checked'; } ?> > Ice Skating<br>
+          <input type="checkbox" name="sports[]" value="curling" <?php if (strpos($sports, 'Curling') !== false){ echo 'checked'; } ?> > Curling<br>
+          <input type="checkbox" name="sports[]" value="ballet" <?php if (strpos($sports, 'Ballet') !== false){ echo 'checked'; } ?> > Ballet<br>
+          <input type="checkbox" name="sports[]" value="tennis" <?php if (strpos($sports, 'Tennis') !== false){ echo 'checked'; } ?> > Tennis<br>
+          <input type="checkbox" name="sports[]" value="golf" <?php if (strpos($sports, 'Golf') !== false){ echo 'checked'; } ?> > Golf<br>
+          <input type="checkbox" name="sports[]" value="basketball" <?php if (strpos($sports, 'Basketball') !== false){ echo 'checked'; } ?> > Basketball<br>
+          <input type="checkbox" name="sports[]" value="gymnastics" <?php if (strpos($sports, 'Gymnastics') !== false){ echo 'checked'; } ?> > Gymnastics<br>
           <br>
         </div>
       </div>

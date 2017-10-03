@@ -52,28 +52,27 @@
   <div class="container">
     <h1>Activity</h1>
     <table class="table">
-        <thead>
-            <tr>
-                <th>user_id</th>
-                <th>ip_address</th>
-                <th>timestamp</th>
-                <th>page</th>
-            </tr>
-				</thead>
+      <thead>
+        <tr>
+          <th>user_id</th>
+          <th>ip_address</th>
+          <th>timestamp</th>
+          <th>page</th>
+        </tr>
+			</thead>
 				<tbody>
-					<?php
-						$num_rows = pg_num_rows($activity_table);
-						if($num_rows > 50) { $num_rows = 50; } //sets upper limit on num_rows
-						for($i = 0; $i < $num_rows; $i++){
-							echo '<tr>';
-							echo '<td>' . $results[$i]['user_id'] . '</td>';
-							echo '<td>' . $results[$i]['ip_address'] . '</td>';
-							echo '<td>' . $results[$i]['time_stamp'] . '</td>';
-							echo '<td>' . $results[$i]['page'] . '</td>';
-							echo '</tr>';
-
-						}
-					?>
+				<?php
+					$num_rows = pg_num_rows($activity_table);
+					if ($num_rows > 50){ $num_rows = 50; } //sets upper limit on num_rows
+					for ($i = 0; $i < $num_rows; $i++){
+						echo '<tr>';
+						echo '<td>'.$results[$i]['user_id'].'</td>';
+						echo '<td>'.$results[$i]['ip_address'].'</td>';
+						echo '<td>'.$results[$i]['time_stamp'].'</td>';
+						echo '<td>'.$results[$i]['page'].'</td>';
+						echo '</tr>';
+					}
+				?>
 				</tbody>
     </table>
   </div>
