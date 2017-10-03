@@ -42,7 +42,7 @@
   <p><a href="profile-edit.php">Edit Profile</a></p>
   <p><a href="index.php">Return to Home</a></p>
   <form method="post" action="index.php">
-    <button type="submit" class="btn btn-secondary">Logout</button>
+    <button type="submit" class="btn btn-secondary" id="logout">Logout</button>
   </form>
   </div>
 </body>
