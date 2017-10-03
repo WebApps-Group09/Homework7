@@ -1,8 +1,6 @@
 <?php
   session_start();
-  if (!empty($_POST["logout"])) {
-    session_unset();
-  } else if (isset($_SESSION["id"])) {
+  if (isset($_SESSION["id"])) {
     header('Location: home.php');
   } else if (!empty($_POST["username"])) {
     //TODO: check if the username exists, if not, create an entry in the db
@@ -27,7 +25,8 @@
   <div class="container">
     <h1>Login</h1>
   <?php
-    if (!empty($_POST["logout"])) {
+    if (isset($_SESSION["logout"])) {
+      unset($_SESSION["logout"]);
       echo '<p>You have been logged out.</p>';
     }
   ?>

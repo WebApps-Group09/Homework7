@@ -25,7 +25,7 @@
     } else {
       echo '<p>Hello Guest</p>';
     }
-    echo '<p><a href=profile.php>Your Profile</a></p>'
+    echo '<p><a href=home.php>Return Home</a></p>'
   ?>
     <h1>Information</h1>
   <?php
