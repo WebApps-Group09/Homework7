@@ -6,8 +6,7 @@
     //TODO: check if the username exists, if not, create an entry in the db
     //TODO: log the user in
     $_SESSION["id"] = 0; //TODO: set session to id in db
-    echo 'username is set';
-    //header('Location: home.php');
+    header('Location: home.php');
   }
   include 'page-views.php';
 ?>
