@@ -1,4 +1,4 @@
-<?php
+w<?php
   session_start();
   if (isset($_SESSION["id"])) {
     header('Location: home.php');
@@ -33,14 +33,8 @@
         </button>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a class="disabled" href="index.php">Profile</a></li>
-          <li><a class="disabled" href="profile-edit.php">Edit Profile</a></li>
-          <li><a class="disabled" href="info.php">Info</a></li>
-          <li><a class="disabled" href="activity.php">Activity</a></li>
-        </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="logout.php">Logout</a></li>
+          <li class="active">Login</li>
         </ul>
       </div>
     </div>

@@ -35,7 +35,9 @@
           <li><a href="activity.php">Activity</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="logout.php">Logout</a></li>
+          <form action="logout.php">
+          <li><input type="submit" name="logout" value="Logout"/></li>
+          </form>
         </ul>
       </div>
     </div>
@@ -98,9 +100,9 @@
     echo '<p>'.date('Y-m-d H:i:s').'</p>';
 
     echo '<h3>Total Page Visits</h3>';
-    echo '<p><strong>Index Views:</strong> '..'<p>';
-    echo '<p><strong>Profile-Edit Views:</strong> '..'<p>';
-    echo '<p><strong>Profile Views:</strong> '..'<p>';
+    echo '<p><strong>Index Views:</strong> '.'<p>';
+    echo '<p><strong>Profile-Edit Views:</strong> '.'<p>';
+    echo '<p><strong>Profile Views:</strong> '.'<p>';
   ?>
   </div>
   <!-- JS for the navbar collapse -->
