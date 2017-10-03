@@ -4,12 +4,14 @@
   foreach($columns as $column) {
     if(!empty($_POST[$column])) {
       $query = "UPDATE users SET ".$column."='".$_POST[$column]."' WHERE "."id=".$_SESSION["id"];
-      pg_query($db_connection, $query);
+      //pg_query($db_connection, $query);
+      echo $query;
     }
   }
   if(!empty($_POST["zip"])) { // only non-string column
     $query = "UPDATE users SET zip=".$_POST["zip"]." WHERE "."id=".$_SESSION["id"];
-    pg_query($db_connection, $query);
+    //pg_query($db_connection, $query);
+    echo $query;
   }
   if(!empty($_POST["sports"])) {
     $sports = "";
@@ -17,8 +19,9 @@
       $sports += $sport.":";
     }
     $query = "UPDATE users SET sports=".$sports." WHERE "."id=".$_SESSION["id"];
-    pg_query($db_connection, $query);
+    //pg_query($db_connection, $query);
+    echo $query;
   }
   //TODO: set db values
-  header("Location: home.php");
+  //header("Location: home.php");
 ?>
