@@ -28,10 +28,17 @@ CREATE TABLE activity (
 );
 ALTER TABLE activity OWNER to homework7;
 
+INSERT INTO users (username, registration) VALUES ("ann", CURRENT_TIMESTAMP);
+UPDATE users SET first_name = "Ann" WHERE username="ann";
+
+SELECT id FROM users WHERE username="ann";
+
 /*
 helpful commands:
  - connect to database interface
 sudo -u postgres psql postgres
+psql homework7 -d homework7 -h localhost -W
+  homework7
 
 - use a database
   \c [database name]
@@ -39,4 +46,6 @@ sudo -u postgres psql postgres
   \dt
 - look at the table schema
   \d [table name]
+- quit db interface
+  \q
 */
