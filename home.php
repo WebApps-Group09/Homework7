@@ -55,7 +55,7 @@
       echo "<p>".$year."</p>";
     echo "<h3>Favorite Sports</h3>";
       foreach (explode(":", $sports) as $sport) {
-        echo " ".$sport;
+        echo $sport."<br>";
       }
     echo "<h3>Favorite Quote</h3>";
       echo "<p>".$quote."</p>";

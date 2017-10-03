@@ -55,11 +55,12 @@
       </div>
       <div class="row form-group">
         <label class="col-sm-2 control-label">Address</label>
-        <div class="col-sm-12">
+        <div class="col-sm-10">
           <input class="form-control" name="address" id="inputAddr" placeholder="Address" type="text" value="<?php echo $address; ?>" required/>
         </div>
       </div>
       <div class="row form-group">
+        <div class="col-sm-2"></div>
         <div class="col-sm-4">
           <input class="form-control" name="city" id="inputCity" placeholder="City" type="text" value="<?php echo $city; ?>" required/>
         </div>
