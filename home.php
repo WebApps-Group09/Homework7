@@ -1,7 +1,7 @@
 <?php
   session_start();
   if (!isset($_SESSION["id"])) {
-    header('Location: /index.php');
+    header('Location: index.php');
   }
   include 'page-views.php';
 ?>
@@ -22,7 +22,7 @@
 ?>
   <div class="container">
   <?php
-    echo '<h1>Profile</h1>'
+    echo '<h1>Profile</h1>';
     echo '<h3>Full Name</h3>';
       echo '<p>'.$fname.' '.$lname.'</p>';
     echo '<h3>Address/Dorm</h3>';

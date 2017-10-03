@@ -1,12 +1,12 @@
 <?php
   session_start();
   if (isset($_SESSION["id"])) {
-    header('Location: /home.php');
+    header('Location: home.php');
   } else if (!empty($_POST["username"])) {
     //TODO: check if the username exists, if not, create an entry in the db
     //TODO: log the user in
     $_SESSION["id"] = 0; //TODO: set session to id in db
-    header('Location: /home.php');
+    header('Location: home.php');
   }
   include 'page-views.php';
 ?>
@@ -27,7 +27,7 @@
   <?php
     if (isset($_POST["logout"])) {
       session_unset();
-      echo '<p>You have been logged out.</p>'
+      echo '<p>You have been logged out.</p>';
     }
   ?>
     <form method="post" action="index.php">

@@ -1,8 +1,9 @@
 <?php
   session_start();
   if (!isset($_SESSION["id"])) {
-    header('Location: /index.php');
+    header('Location: index.php');
   }
+  include 'page-views.php';
 ?>
 <html lang="en">
 <head>
