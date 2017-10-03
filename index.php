@@ -26,20 +26,20 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Homework 7</a>
+    <a class="navbar-brand" href="index.php">Homework 7</a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="index.php">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Edit Profile</a>
+          <a class="nav-link disabled" href="profile-edit.php">Edit Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Info</a>
+          <a class="nav-link disabled" href="info.php">Info</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Activity</a>
+          <a class="nav-link disabled" href="activity.php">Activity</a>
         </li>
       </ul>
     </div>

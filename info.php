@@ -21,20 +21,20 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Homework 7</a>
+    <a class="navbar-brand" href="index.php">Homework 7</a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="index.php">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Edit Profile</a>
+          <a class="nav-link" href="profile-edit.php">Edit Profile</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Info</a>
+          <a class="nav-link" href="info.php">Info</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Activity</a>
+          <a class="nav-link" href="activity.php">Activity</a>
         </li>
       </ul>
     </div>
@@ -97,18 +97,10 @@
     echo '<p>'.date('Y-m-d H:i:s').'</p>';
 
     echo '<h3>Total Page Visits</h3>';
-    $handle = fopen('page_counts.txt', 'r+');
-    $line = fgets($handle);
-    $counts = explode(',',$line);
-    $newIndexCount = intval($counts[0]) + 1;
-    echo '<p><strong>Index Views:</strong> '.$newIndexCount.'<p>';
-    echo '<p><strong>Profile-Edit Views:</strong> '.$counts[1].'<p>';
-    echo '<p><strong>Profile Views:</strong> '.$counts[2].'<p>';
-
-    $newLine = strval($newIndexCount).','.$counts[1].','.$counts[2];
-    file_put_contents('page_counts.txt', $newLine);
-    fclose($handle);
-?>
+    echo '<p><strong>Index Views:</strong> '..'<p>';
+    echo '<p><strong>Profile-Edit Views:</strong> '..'<p>';
+    echo '<p><strong>Profile Views:</strong> '..'<p>';
+  ?>
   </div>
 </body>
 </html>
