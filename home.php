@@ -17,26 +17,27 @@
   <link href="src/css/custom.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="index.php">Homework 7</a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.php">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="profile-edit.php">Edit Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="info.php">Info</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="activity.php">Activity</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="index.php">Profile</a></li>
+          <li><a href="profile-edit.php">Edit Profile</a></li>
+          <li><a href="info.php">Info</a></li>
+          <li><a href="activity.php">Activity</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="logout.php">Logout</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 <?php
@@ -65,6 +66,8 @@
     <button type="submit" class="btn btn-secondary">Logout</button>
   </form>
   </div>
+  <!-- JS for the navbar collapse -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
