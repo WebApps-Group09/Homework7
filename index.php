@@ -5,6 +5,7 @@
   } else if (!empty($_POST["username"])) {
     //TODO: check if the username exists, if not, create an entry in the db
     //TODO: log the user in
+    $_SESSION["username"] = $_POST["username"];
     $_SESSION["id"] = 0; //TODO: set session to id in db
     header('Location: home.php');
   }

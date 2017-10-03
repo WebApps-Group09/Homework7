@@ -43,12 +43,7 @@
   <div class="container">
     <h1>Welcome</h1>
   <?php
-    if (isset($_COOKIE["fname"])) {
-      echo '<p>Welcome back, '.$_COOKIE["fname"].'</p>';
-    } else {
-      echo '<p>Hello Guest</p>';
-    }
-    echo '<p><a href=home.php>Return Home</a></p>'
+      echo '<p>Welcome back, '.$_SESSION["username"].'</p>';
   ?>
     <h1>Information</h1>
   <?php
