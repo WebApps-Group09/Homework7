@@ -17,9 +17,31 @@
   <link href="src/css/custom.css" rel="stylesheet">
 </head>
 <body>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Homework 7</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Edit Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Info</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Activity</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div class="container">
     <h1>Edit Profile</h1>
-    <form method="post" action="profile.php">
+    <form method="post" action="home.php">
       <div class="row form-group">
         <label class="col-sm-2 control-label" for="inputName">Full Name</label>
         <div class="col-sm-5">
