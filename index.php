@@ -1,22 +1,24 @@
 <?php
   session_start();
   if (isset($_SESSION["id"])) {
-    header('Location: home.php');
+    header("Location: home.php");
   } else if (!empty($_POST["username"])) {
-    echo 'USERNAME POSTED';
-    $db_connection = pg_connect('host=localhost dbname=homework7 user=homework7 password=homework7');
-    $id_query = 'SELECT id FROM users WHERE username="'.$_POST["username"].'"';
+    echo "USERNAME POSTED";
+    $db_connection = pg_connect("host=localhost dbname=homework7 user=homework7 password=homework7");
+    $id_query = "SELECT id FROM users WHERE username='".$_POST["username"]."'";
+    echo $id_query;
     $result = pg_query($db_connection, $id_query);
     if (pg_num_rows($result) == 0) {
-      $query = 'INSERT INTO users (username, registration) VALUES ("'.$_POST["username"].'", CURRENT_TIMESTAMP)';
+      $query = "INSERT INTO users (username, registration) VALUES ('".$_POST["username"]."', CURRENT_TIMESTAMP)";
+      echo $query;
       pg_query($db_connection, $query);
       $result = pg_query($db_connection, $id_query);
     }
     $_SESSION["id"] = pg_fetch_result($result, 0, "id");
     $_SESSION["username"] = $_POST["username"];
-    //header('Location: home.php');
+    //header("Location: home.php");
   }
-  include 'page-views.php';
+  include "page-views.php";
 ?>
 <html lang="en">
 <head>
@@ -51,7 +53,7 @@
   <?php
     if (isset($_SESSION["logout"])) {
       unset($_SESSION["logout"]);
-      echo '<p style="color:#c0c0c0">You have been logged out.</p>';
+      echo "<p style="color:#c0c0c0">You have been logged out.</p>";
     }
   ?>
     <h1>Login</h1>

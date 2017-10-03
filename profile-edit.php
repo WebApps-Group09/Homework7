@@ -1,9 +1,9 @@
 <?php
   session_start();
   if (!isset($_SESSION["id"])) {
-    header('Location: index.php');
+    header("Location: index.php");
   }
-  include 'page-views.php';
+  include "page-views.php";
 ?>
 <html lang="en">
 <head>
@@ -95,7 +95,7 @@
       <div class="row form-group">
         <label class="col-sm-2 control-label" for="inputQuote">Favorite Quote</label>
         <div class="col-sm-10">
-          <input class="form-control" name="quote" id="inputQuote" placeholder="ex: Don't cry because it's over, smile because it happened." type="text" value="<?php if(isset($_COOKIE["quote"]) && !empty($_COOKIE["quote"])){echo $_COOKIE["quote"];} ?>">
+          <input class="form-control" name="quote" id="inputQuote" placeholder="ex: Don"t cry because it"s over, smile because it happened." type="text" value="<?php if(isset($_COOKIE["quote"]) && !empty($_COOKIE["quote"])){echo $_COOKIE["quote"];} ?>">
         </div>
       </div>
       <div class="row form-group">

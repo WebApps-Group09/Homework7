@@ -1,9 +1,9 @@
 <?php
   session_start();
   if (!isset($_SESSION["id"])) {
-    header('Location: index.php');
+    header("Location: index.php");
   }
-  include 'page-views.php';
+  include "page-views.php";
 ?>
 <html lang="en">
 <head>
@@ -45,21 +45,21 @@
 ?>
   <div class="container">
   <?php
-    echo '<h1>Profile</h1>';
-    echo '<h3>Full Name</h3>';
-      echo '<p>'.$fname.' '.$lname.'</p>';
-    echo '<h3>Address/Dorm</h3>';
-      echo '<p>'.$address.' '.$dorm.'</p>';
-    echo '<h3>City/State/Zip</h3>';
-      echo '<p>'.$city.' '.$state.' '.$zip.'</p>';
-    echo '<h3>Current Year</h3>';
-      echo '<p>'.$year.'</p>';
-    echo '<h3>Favorite Sports</h3>';
+    echo "<h1>Profile</h1>";
+    echo "<h3>Full Name</h3>";
+      echo "<p>".$fname." ".$lname."</p>";
+    echo "<h3>Address/Dorm</h3>";
+      echo "<p>".$address." ".$dorm."</p>";
+    echo "<h3>City/State/Zip</h3>";
+      echo "<p>".$city." ".$state." ".$zip."</p>";
+    echo "<h3>Current Year</h3>";
+      echo "<p>".$year."</p>";
+    echo "<h3>Favorite Sports</h3>";
       foreach ($sports as $sport) {
-        echo ' '.$sport;
+        echo " ".$sport;
       }
-    echo '<h3>Favorite Quote</h3>';
-      echo '<p>'.$quote.'</p>';
+    echo "<h3>Favorite Quote</h3>";
+      echo "<p>".$quote."</p>";
   ?>
   <br>
   <form method="post" action="logout.php">
