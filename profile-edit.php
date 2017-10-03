@@ -47,42 +47,42 @@
       <div class="row form-group">
         <label class="col-sm-2 control-label">Full Name</label>
         <div class="col-sm-5">
-          <input class="form-control" name="fname" id="inputFirstName" placeholder="First" type="text" value="<?php echo $first_name; ?>" required/>
+          <input class="form-control" name="first_name" placeholder="First" type="text" value="<?php echo $first_name; ?>" required/>
         </div>
         <div class="col-sm-5">
-          <input class="form-control" name="lname" id="inputLastName" placeholder="Last" type="text" value="<?php echo $last_name; ?>" required/>
+          <input class="form-control" name="last_name" placeholder="Last" type="text" value="<?php echo $last_name; ?>" required/>
         </div>
       </div>
       <div class="row form-group">
         <label class="col-sm-2 control-label">Address</label>
         <div class="col-sm-10">
-          <input class="form-control" name="address" id="inputAddr" placeholder="Address" type="text" value="<?php echo $address; ?>" required/>
+          <input class="form-control" name="address" placeholder="Address" type="text" value="<?php echo $address; ?>" required/>
         </div>
       </div>
       <div class="row form-group">
         <div class="col-sm-2"></div>
         <div class="col-sm-4">
-          <input class="form-control" name="city" id="inputCity" placeholder="City" type="text" value="<?php echo $city; ?>" required/>
+          <input class="form-control" name="city" placeholder="City" type="text" value="<?php echo $city; ?>" required/>
         </div>
         <div class="col-sm-3">
-          <input class="form-control" name="state" id="inputState" placeholder="State" type="text" value="<?php echo $state; ?>" required/>
+          <input class="form-control" name="state" placeholder="State" type="text" value="<?php echo $state; ?>" required/>
         </div>
         <div class="col-sm-3">
-          <input class="form-control" name="zip" id="inputZip" placeholder="Zip" type="text" value="<?php echo $zip; ?>" required/>
+          <input class="form-control" name="zip" placeholder="Zip" type="number" value="<?php echo $zip; ?>" required/>
         </div>
       </div>
       <div class="row form-group">
         <label class="col-sm-2 control-label">Dorm/Year</label>
         <div class="col-sm-5">
-          <input class="form-control" name="dorm" id="inputDorm" placeholder="Dorm" type="text" value="<?php echo $dorm; ?>" required/>
+          <input class="form-control" name="dorm" placeholder="Dorm" type="text" value="<?php echo $dorm; ?>" required/>
         </div>
         <div class="col-sm-5">
-          <input class="form-control" name="year" id="inputYear" placeholder="ex: Senior" type="text" value="<?php echo $year; ?>">
+          <input class="form-control" name="year" placeholder="ex: Senior" type="text" value="<?php echo $year; ?>">
         </div>
       </div>
       <div class="row form-group">
         <label class="col-sm-2 control-label">Favorite Sports</label>
-        <div class="col-sm-10" id="inputSports">
+        <div class="col-sm-10">
           <input type="checkbox" name="sports[]" value="iceskating" <?php if(strpos($sports, 'Ice Skating') !== false){ echo 'checked'; } ?> > Ice Skating<br>
           <input type="checkbox" name="sports[]" value="curling" <?php if(strpos($sports, 'Curling') !== false){ echo 'checked'; } ?> > Curling<br>
           <input type="checkbox" name="sports[]" value="ballet" <?php if(strpos($sports, 'Ballet') !== false){ echo 'checked'; } ?> > Ballet<br>
@@ -96,7 +96,7 @@
       <div class="row form-group">
         <label class="col-sm-2 control-label">Favorite Quote</label>
         <div class="col-sm-10">
-          <input class="form-control" name="quote" id="inputQuote" placeholder="ex: Don't cry because it's over, smile because it happened." type="text" value="<?php echo $quote; ?>">
+          <input class="form-control" name="quote" placeholder="ex: Don't cry because it's over, smile because it happened." type="text" value="<?php echo $quote; ?>">
         </div>
       </div>
       <div class="row form-group">
