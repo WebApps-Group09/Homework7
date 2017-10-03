@@ -40,8 +40,8 @@
   ?>
   <br>
   <p><a href="profile-edit.php">Edit Profile</a></p>
-  <p><a href="activity.php">View Activity/a></p>
-  <p><a href="info.php">View Info/a></p>
+  <p><a href="activity.php">View Activity</a></p>
+  <p><a href="info.php">View Info</a></p>
   <form method="post" action="index.php">
     <button type="submit" class="btn btn-secondary" id="logout" value="logout">Logout</button>
   </form>
