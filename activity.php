@@ -4,15 +4,9 @@
     header("Location: index.php");
   }
 
-  //start a session
-    $db_connection = pg_connect("host=localhost dbname=homework7 user=homework7 password=homework7");
-  //make a query
-    $activity_query = "SELECT * from activity";
-    $activity_table = pg_query($db_connection, $activity_query);
-  //run query
-    $results = pg_fetch_all($activity_table);
-  //display the data
-  include "page-views.php";
+  $db_connection = pg_connect("host=localhost dbname=homework7 user=homework7 password=homework7");
+  $query = "SELECT * from activity";
+  $results = pg_query($db_connection, $query);
 ?>
 <html lang="en">
 <head>
@@ -62,14 +56,15 @@
 			</thead>
 				<tbody>
 				<?php
-					$num_rows = pg_num_rows($activity_table);
+          $activities = pg_fetch_all($results);
+					$num_rows = pg_num_rows($activities);
 					if ($num_rows > 50){ $num_rows = 50; } //sets upper limit on num_rows
 					for ($i = 0; $i < $num_rows; $i++){
 						echo '<tr>';
-						echo '<td>'.$results[$i]['user_id'].'</td>';
-						echo '<td>'.$results[$i]['ip_address'].'</td>';
-						echo '<td>'.$results[$i]['time_stamp'].'</td>';
-						echo '<td>'.$results[$i]['page'].'</td>';
+						echo '<td>'.$activities[$i]['user_id'].'</td>';
+						echo '<td>'.$activities[$i]['ip_address'].'</td>';
+						echo '<td>'.$activities[$i]['time_stamp'].'</td>';
+						echo '<td>'.$activities[$i]['page'].'</td>';
 						echo '</tr>';
 					}
 				?>

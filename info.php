@@ -49,15 +49,19 @@
     <h1>Information</h1>
   <?php
     $agent = $_SERVER["HTTP_USER_AGENT"];
-    if(preg_match("/Linux/",$agent)) $os = "Linux";
-    elseif(preg_match("/Win/",$agent)) $os = "Windows";
-    elseif(preg_match("/Mac/",$agent)) $os = "Mac";
-    else $os = "Unknown";
 
-    echo "<h3>OS Information</h3>";
-    echo "<p>".$os."</p>";
+    echo "<h3>OS</h3>";
+    if(strpos($agent, 'Linux')) {
+      echo 'Linux';
+    } else if(strpos($agent, 'Win')) {
+      echo 'Windows';
+    } else if(strpos($agent, 'Max')) {
+      echo 'Mac';
+    } else {
+      echo 'Unknown';
+    }
 
-    echo "<h3>Browser Information</h3>";
+    echo "<h3>Browser</h3>";
     if(strpos($agent, 'Chrome')) {
       echo 'Chrome';
     } else if(strpos($agent, 'Safari')) {
@@ -72,43 +76,44 @@
       echo 'Unknown Browser';
     }
 
-
-
-    echo "<h3>Browser Langauge</h3>";
+    echo "<h3>Langauge</h3>";
     $lang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 2);
     print_r($lang);
 
     echo "<h3>IP address</h3>";
     $clientip = "";
-      if(getenv("HTTP_CLIENT_IP"))
-        $clientip = getenv("HTTP_CLIENT_IP");
-      else if(getenv("HTTP_X_FORWARDED_FOR"))
-        $clientip = getenv("HTTP_X_FORWARDED_FOR");
-      else if(getenv("HTTP_X_FORWARDED"))
-        $clientip = getenv("HTTP_X_FORWARDED");
-      else if(getenv("HTTP_FORWARDED_FOR"))
-        $clientip = getenv("HTTP_FORWARDED_FOR");
-      else if(getenv("HTTP_FORWARDED"))
-        $clientip = getenv("HTTP_FORWARDED");
-      else if(getenv("REMOTE_ADDR"))
-        $clientip = getenv("REMOTE_ADDR");
-      else
-        $clientip = "UNKNOWN";
-      print_r($clientip);
+    if(getenv("HTTP_CLIENT_IP")) {
+      $clientip = getenv("HTTP_CLIENT_IP");
+    } else if(getenv("HTTP_X_FORWARDED_FOR")) {
+      $clientip = getenv("HTTP_X_FORWARDED_FOR");
+    } else if(getenv("HTTP_X_FORWARDED")) {
+      $clientip = getenv("HTTP_X_FORWARDED");
+    } else if(getenv("HTTP_FORWARDED_FOR")) {
+      $clientip = getenv("HTTP_FORWARDED_FOR");
+    } else if(getenv("HTTP_FORWARDED")) {
+      $clientip = getenv("HTTP_FORWARDED");
+    ] else if(getenv("REMOTE_ADDR")) {
+      $clientip = getenv("REMOTE_ADDR");
+    } else {
+      $clientip = "UNKNOWN";
+    }
+    print_r($clientip);
 
-    echo "<h3>HTTPS Usage</h3>";
-    if($_SERVER["HTTPS"])
+    echo "<h3>HTTPS</h3>";
+    if($_SERVER["HTTPS"]) {
       print_r("You are using https");
-    else
+    } else {
       print_r("You are not using https");
+    }
 
-    echo "<h3>Current Server Timestamp</h3>";
+    echo "<h3>Timestamp</h3>";
     echo "<p>".date("Y-m-d H:i:s")."</p>";
 
-    echo "<h3>Total Page Visits</h3>";
-    echo "<p><strong>Index Views:</strong> "."<p>";
-    echo "<p><strong>Profile-Edit Views:</strong> "."<p>";
-    echo "<p><strong>Profile Views:</strong> "."<p>";
+    echo "<h3>Page Visits</h3>";
+    echo "<p><strong>Home:</strong> "."<p>";
+    echo "<p><strong>Info:</strong> "."<p>";
+    echo "<p><strong>Profile Edit:</strong> "."<p>";
+    echo "<p><strong>Activity:</strong> "."<p>";
   ?>
   </div>
   <!-- JS for the navbar collapse -->
