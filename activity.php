@@ -57,7 +57,7 @@
 				<tbody>
 				<?php
           $activities = pg_fetch_all($results);
-					$num_rows = pg_num_rows($activities);
+					$num_rows = pg_num_rows($results);
 					if ($num_rows > 50){ $num_rows = 50; } //sets upper limit on num_rows
 					for ($i = 0; $i < $num_rows; $i++){
 						echo '<tr>';
