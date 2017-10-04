@@ -55,7 +55,7 @@
       echo 'Linux';
     } else if(strpos($agent, 'Win')) {
       echo 'Windows';
-    } else if(strpos($agent, 'Max')) {
+    } else if(strpos($agent, 'Mac')) {
       echo 'Mac';
     } else {
       echo 'Unknown';
