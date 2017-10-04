@@ -17,7 +17,7 @@
   if(!empty($_POST["sports"])) {
     $sports = "";
     foreach($_POST["sports"] as $sport) {
-      $sports += $sport.":";
+      $sports = $sports.":".$sport;
     }
     $query = "UPDATE users SET sports=".$sports." WHERE "."id=".$_SESSION["id"];
     //pg_query($db_connection, $query);
