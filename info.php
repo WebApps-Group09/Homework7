@@ -92,7 +92,7 @@
       $clientip = getenv("HTTP_FORWARDED_FOR");
     } else if(getenv("HTTP_FORWARDED")) {
       $clientip = getenv("HTTP_FORWARDED");
-    ] else if(getenv("REMOTE_ADDR")) {
+    } else if(getenv("REMOTE_ADDR")) {
       $clientip = getenv("REMOTE_ADDR");
     } else {
       $clientip = "UNKNOWN";
