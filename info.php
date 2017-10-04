@@ -58,9 +58,21 @@
     echo "<p>".$os."</p>";
 
     echo "<h3>Browser Information</h3>";
-    echo $agent;
-    $browser = get_browser($agent, true);
-    print_r($browser);
+    if(strpos($agent, 'Chrome')) {
+      echo 'Chrome';
+    } else if(strpos($agent, 'Safari')) {
+      echo 'Safari';
+    } else if(strpos($agent, 'Opera')) {
+      echo 'Opera';
+    } else if(strpos($agent, 'Firefox')) {
+      echo 'Firefox';
+    } else if(strpos($agent, 'MSIE')) {
+      echo 'Internet Explorer';
+    } else {
+      echo 'Unknown Browser';
+    }
+
+
 
     echo "<h3>Browser Langauge</h3>";
     $lang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 2);
