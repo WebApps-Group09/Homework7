@@ -14,8 +14,14 @@
   }
   if(!empty($_POST["sports"])) {
     $sports = "";
+    $i = 0;
     foreach($_POST["sports"] as $sport) {
-      $sports = $sports.":".$sport;
+      if ($i == 0) {
+        $sports = $sport;
+      } else {
+        $sports = $sports.":".$sport;
+      }
+      $i += 1;
     }
     $query = "UPDATE users SET sports='".$sports."' WHERE "."id=".$_SESSION["id"];
     pg_query($db_connection, $query);
