@@ -17,7 +17,7 @@
     foreach($_POST["sports"] as $sport) {
       $sports = $sports.":".$sport;
     }
-    $query = "UPDATE users SET sports=".$sports." WHERE "."id=".$_SESSION["id"];
+    $query = "UPDATE users SET sports='".$sports."' WHERE "."id=".$_SESSION["id"];
     pg_query($db_connection, $query);
   }
   header("Location: home.php");
