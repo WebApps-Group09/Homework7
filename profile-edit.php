@@ -5,6 +5,26 @@
   }
   include "page-views.php";
   include "get-profile.php";
+    $clientip = "";
+    if(getenv("HTTP_CLIENT_IP")) {
+      $clientip = getenv("HTTP_CLIENT_IP");
+    } else if(getenv("HTTP_X_FORWARDED_FOR")) {
+      $clientip = getenv("HTTP_X_FORWARDED_FOR");
+    } else if(getenv("HTTP_X_FORWARDED")) {
+      $clientip = getenv("HTTP_X_FORWARDED");
+    } else if(getenv("HTTP_FORWARDED_FOR")) {
+      $clientip = getenv("HTTP_FORWARDED_FOR");
+    } else if(getenv("HTTP_FORWARDED")) {
+      $clientip = getenv("HTTP_FORWARDED");
+    } else if(getenv("REMOTE_ADDR")) {
+      $clientip = getenv("REMOTE_ADDR");
+    } else {
+      $clientip = "UNKNOWN";
+    }
+  $db_connection = pg_connect("host=localhost dbname=homework7 user=homework7 password=homework7");
+  $query = "INSERT INTO activity (user_id,ip_address,time_stamp) VALUES (".$_SESSION['id'].", '".$clientip."', ".CURRENT_TIMESTAMP.");";//.date('Y-m-d H:i:s').");";
+  pg_query($query);
+
 ?>
 <html lang="en">
 <head>

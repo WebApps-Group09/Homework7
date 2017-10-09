@@ -5,7 +5,30 @@
   }
   $_SESSION["page"] = "info";
   include "page-views.php";
+    $clientip = "";
+    if(getenv("HTTP_CLIENT_IP")) {
+      $clientip = getenv("HTTP_CLIENT_IP");
+    } else if(getenv("HTTP_X_FORWARDED_FOR")) {
+      $clientip = getenv("HTTP_X_FORWARDED_FOR");
+    } else if(getenv("HTTP_X_FORWARDED")) {
+      $clientip = getenv("HTTP_X_FORWARDED");
+    } else if(getenv("HTTP_FORWARDED_FOR")) {
+      $clientip = getenv("HTTP_FORWARDED_FOR");
+    } else if(getenv("HTTP_FORWARDED")) {
+      $clientip = getenv("HTTP_FORWARDED");
+    } else if(getenv("REMOTE_ADDR")) {
+      $clientip = getenv("REMOTE_ADDR");
+    } else {
+      $clientip = "UNKNOWN";
+    }
+  $db_connection = pg_connect("host=localhost dbname=homework7 user=homework7 password=homework7");
+  $query = "INSERT INTO activity (user_id,ip_address,time_stamp) VALUES (".$_SESSION['id'].", '".$clientip."', ".CURRENT_TIMESTAMP.");";//.date('Y-m-d H:i:s').");";
+  pg_query($query);
+
+
 ?>
+
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -110,11 +133,12 @@
     echo "<p>".date("Y-m-d H:i:s")."</p>";
 
     echo "<h3>Page Visits</h3>";
-    echo "<p><strong>Home:</strong> "."<p>";
-    echo "<p><strong>Info:</strong> "."<p>";
-    echo "<p><strong>Profile Edit:</strong> "."<p>";
-    echo "<p><strong>Activity:</strong> "."<p>";
-  ?>
+    $db_connection = pg_connect("host=localhost dbname=homework7 user=homework7 password=homework7");
+    $query = "SELECT COUNT(*) FROM activity WHERE user_id= ".$_SESSION['id'].";";
+    $result = pg_query($query);
+    $views = pg_fetch_result($result, 0, "count");
+    echo "<p>".$views."</p>";
+    ?>
   </div>
   <!-- JS for the navbar collapse -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

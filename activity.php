@@ -51,7 +51,6 @@
           <th>user_id</th>
           <th>ip_address</th>
           <th>timestamp</th>
-          <th>page</th>
         </tr>
 			</thead>
 				<tbody>
@@ -64,7 +63,6 @@
 						echo '<td>'.$activities[$i]['user_id'].'</td>';
 						echo '<td>'.$activities[$i]['ip_address'].'</td>';
 						echo '<td>'.$activities[$i]['time_stamp'].'</td>';
-						echo '<td>'.$activities[$i]['page'].'</td>';
 						echo '</tr>';
 					}
 				?>
